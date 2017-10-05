@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <h1>Todo List</h1>
+  <div class="addItem">
+    <form  (ngSubmit)="addTodos();">
+        <input [(ngModel)]="newItem" name="inputItem" placeholder="Add Task" class="addText" />
+        <button (click)="addTodos();">Add</button>
+    </form>
+    <ul>
+        <li *ngFor="let item of items; let i = index">
+          <input type="checkbox" name="{{item}}" value="{{item}}"> <label>{{item}}</label> <span (click)="removeItem(i);">x</span>
+        </li>
+      </ul>
+  </div>
+</div>
+
+
